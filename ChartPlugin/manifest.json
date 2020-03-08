@@ -1,0 +1,13 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/nike4613/ModSaber-MetadataFileSchema/master/Schema.json",
+  "author": "susch19, mostly copied code from Shoko84",
+  "description": "Displays an in-game http sendable text",
+  "gameVersion": "1.7.0",
+  "id": "HttpText",
+  "name": "HttpText",
+  "version": "1.0.4",
+  "dependsOn": {
+    "BS Utils": "^1.4.1",
+    "BeatSaberMarkupLanguage": "^1.1.4"
+  }
+}
