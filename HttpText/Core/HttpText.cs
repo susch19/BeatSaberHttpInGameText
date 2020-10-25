@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -18,7 +19,6 @@ namespace HttpText.Core
 {
     public class TextCreator : MonoBehaviour
     {
-
         private static event EventHandler<string> NewHttpText;
 
         private Canvas _canvas;
@@ -72,7 +72,7 @@ namespace HttpText.Core
             _canvas = new GameObject("DiffWarningCanvas").AddComponent<Canvas>();
             _canvas.renderMode = RenderMode.WorldSpace;
             _canvas.transform.position = pos;
-            _canvas.transform.rotation = rot;
+            //_canvas.transform.rotation = rot;
             _canvas.transform.localScale /= 100;
             Logger.log.Debug("Canvas created");
             var rectTransform = _canvas.transform as RectTransform;
@@ -110,7 +110,7 @@ namespace HttpText.Core
             if (context.Request.HttpMethod == "POST")
             {
                 if (context.Request.InputStream != null)
-                    using (var sr = new StreamReader(context.Request.InputStream, Encoding.UTF8))
+                    using (var sr = new StreamReader(context.Request.InputStream, Encoding.Unicode))
                     {
                         var data_text = sr.ReadToEnd();
                         NewHttpText?.Invoke(null, data_text);

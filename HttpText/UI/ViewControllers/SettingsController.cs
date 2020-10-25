@@ -193,7 +193,6 @@ namespace HttpText.UI.ViewControllers
             Plugin.config.Value.HttpTextStandardLevelRotation = _stdRot;
             Plugin.config.Value.HttpText360LevelPosition = _noStdPos;
             Plugin.config.Value.HttpText360LevelRotation = _noStdRot;
-            Plugin.configProvider.Store(Plugin.config.Value);
         }
     }
 }
